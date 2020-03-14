@@ -1,7 +1,7 @@
-baseURL = "https://edenzhong7.github.io/"
+baseURL = "https://auroranow.xyz/"
 # [en, zh-cn, fr, ...] determines default content language
 # [en, zh-cn, fr, ...] 设置默认的语言
-defaultContentLanguage = "zh-cn"
+defaultContentLanguage = "en"
 # theme
 # 主题
 theme = "LoveIt"
@@ -14,7 +14,7 @@ themesDir = "./themes"
 enableRobotsTXT = true
 # whether to use git commit log
 # 是否使用 git 信息
-enableGitInfo = false
+enableGitInfo = true
 # whether to use emoji code
 # 是否使用 emoji 代码
 enableEmoji = true
@@ -452,6 +452,223 @@ enableEmoji = true
           appId = ""
           languageCode = "zh_CN"
 
+  [languages.fr]
+    weight = 3
+    # language code
+    languageCode = "fr"
+    # website title
+    title = "LoveIt Thème"
+    # language name
+    languageName = "Français"
+    # whether to include Chinese/Japanese/Korean
+    hasCJKLanguage = false
+    # default amount of posts in each pages
+    paginate = 12
+    # [UA-XXXXXXXX-X] google analytics code
+    googleAnalytics = ""
+    # copyright description used only for seo schema
+    copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License."
+    # date format
+    dateFormatToUse = "2006-01-02"
+    # Menu Info
+    [languages.fr.menu]
+      [[languages.fr.menu.main]]
+        identifier = "posts"
+        pre = ""
+        name = "Postes"
+        url = "/posts/"
+        title = ""
+        weight = 1
+      [[languages.fr.menu.main]]
+        identifier = "tags"
+        pre = ""
+        name = "Balises"
+        url = "/tags/"
+        title = ""
+        weight = 2
+      [[languages.fr.menu.main]]
+        identifier = "categories"
+        pre = ""
+        name = "Catégories"
+        url = "/categories/"
+        title = ""
+        weight = 3
+      [[languages.fr.menu.main]]
+        identifier = "documentation"
+        pre = ""
+        name = "Documentation"
+        url = "/categories/documentation/"
+        title = ""
+        weight = 4
+      [[languages.fr.menu.main]]
+        identifier = "about"
+        pre = ""
+        name = "À propos"
+        url = "/about/"
+        title = ""
+        weight = 5
+      [languages.fr.params]
+        # site description
+        description = "À propos du thème LoveIt"
+        # site keywords
+        keywords = ["Thème", "Hugo"]
+        # site default theme ("light", "dark", "auto")
+        defaultTheme = "auto"
+        # Home Page Info
+        [languages.fr.params.home]
+          # Home Page Profile
+          [languages.fr.params.home.profile]
+            enable = true
+            # Gravatar Email for preferred avatar in home page
+            gravatarEmail = ""
+            # URL of avatar shown in home page
+            avatarURL = "/images/avatar.png"
+            # subtitle shown in home page
+            subtitle = "Un thème Hugo simple, élégant et efficace"
+            # whether to use typeit animation for subtitle
+            typeit = true
+            # whether to show social links
+            social = true
+          # Home Page Posts
+          [languages.fr.params.home.posts]
+            enable = true
+            # special amount of posts in each home posts page
+            paginate = 6
+            # default behavior when you don't set "hiddenFromHomePage" in front matter
+            defaultHiddenFromHomePage = false
+        # Social Info in home page
+        [languages.fr.params.social]
+          GitHub = "xxxx"
+          Linkedin = "xxxx"
+          Twitter = "xxxx"
+          Instagram = "xxxx"
+          Email = "xxxx@xxxx.com"
+          Facebook = "xxxx"
+          Telegram = "xxxx"
+          # Medium = "xxxx"
+          # Gitlab = "xxxx"
+          Youtubelegacy = "xxxx"
+          # Youtubecustom = "xxxx"
+          # Youtubechannel = "xxxx"
+          # Tumblr ="xxxx"
+          # Quora = "xxxx"
+          # Keybase = "xxxx"
+          # Pinterest = "xxxx"
+          # Reddit = "xxxx"
+          # Codepen = "xxxx"
+          # FreeCodeCamp = "xxxx"
+          # Bitbucket = "xxxx"
+          # Stackoverflow = "xxxx"
+          # Weibo = "xxxx"
+          # Odnoklassniki = "xxxx"
+          # VK = "xxxx"
+          # Flickr = "xxxx"
+          # Xing = "xxxx"
+          # Snapchat = "xxxx"
+          # Soundcloud = "xxxx"
+          # Spotify = "xxxx"
+          # Bandcamp = "xxxx"
+          # Paypal = "xxxx"
+          # Fivehundredpx = "xxxx"
+          # Mix = "xxxx"
+          # Goodreads = "xxxx"
+          # Lastfm = "xxxx"
+          # Foursquare = "xxxx"
+          # Hackernews = "xxxx"
+          # Kickstarter = "xxxx"
+          # Patreon = "xxxx"
+          # Steam = "xxxx"
+          # Twitch = "xxxx"
+          # Strava = "xxxx"
+          # Skype = "xxxx"
+          # Whatsapp = "xxxx"
+          # Zhihu = "xxxx"
+          # Douban = "xxxx"
+          # Angellist = "xxxx"
+          # Slidershare = "xxxx"
+          # Jsfiddle = "xxxx"
+          # Deviantart = "xxxx"
+          # Behance = "xxxx"
+          # Dribble = "xxxx"
+          # Wordpress = "xxxx"
+          # Vine = "xxxx"
+          # Googlescholar = "xxxx"
+          # Researchgate = "xxxx"
+          # Mastodon = "xxxx"
+          # MastodonPrefix = "https://mastodon.technology/"
+          # Thingiverse = "xxxx"
+          # Devto = "xxxx"
+          # Gitea = "xxxx"
+          # XMPP = "xxxx"
+          # Matrix = "xxxx"
+          # Bilibili = "xxxx"
+        # Social Share Links in post page
+        [languages.fr.params.share]
+          enable = true
+          Twitter = true
+          Facebook = true
+          Linkedin = true
+          Whatsapp = true
+          Pinterest = true
+          # Tumblr = true
+          HackerNews = true
+          # Reddit = true
+          # VK = true
+          # Buffer = true
+          # Xing = true
+          # Line = true
+          # Instapaper = true
+          # Pocket = true
+          # Digg = true
+          # Stumbleupon = true
+          # Flipboard = true
+          # Weibo = true
+          # Renren = true
+          # Myspace = true
+          # Blogger = true
+          # Baidu = true
+          # Odnoklassniki = true
+          # Evernote = true
+          # Skype = true
+          # Trello = true
+          # Mix = true
+        # Comment Config
+        [languages.fr.params.comment]
+          enable = true
+          # Disqus Comment Config (https://disqus.com/)
+          [languages.fr.params.comment.disqus]
+            enable = false
+            # Disqus shortname to use Disqus in posts
+            shortname = ""
+          # Gitalk Comment Config (https://github.com/gitalk/gitalk)
+          [languages.fr.params.comment.gitalk]
+            enable = false
+            owner = ""
+            repo = ""
+            clientId = ""
+            clientSecret = ""
+          # Valine Comment Config (https://github.com/xCss/Valine)
+          [languages.fr.params.comment.valine]
+            enable = true
+            appId = "QGzwQXOqs5JOhN4RGPOkR2mR-MdYXbMMI"
+            appKey = "WBmoGyJtbqUswvfLh6L8iEBr"
+            placeholder = "Votre commentaire ..."
+            notify = false
+            verify = true
+            avatar = "mp"
+            meta= ""
+            pageSize = 10
+            lang = "en"
+            visitor = true
+            recordIP = true
+          # Facebook Comment Config (https://developers.facebook.com/docs/plugins/comments)
+          [languages.fr.params.comment.facebook]
+            enable = false
+            width = "100%"
+            numPosts = 10
+            appId = ""
+            languageCode = "fr"
+
 [params]
   # LoveIt theme version
   # LoveIt 主题版本
@@ -479,11 +696,10 @@ enableEmoji = true
     since = 2019
     # ICP info only in China (HTML format is allowed)
     # ICP 备案信息，仅在中国使用 (允许使用 HTML 格式)
-    icp = "粤ICP备12345号"
+    icp = ""
     # license info (HTML format is allowed)
     # 许可协议信息 (允许使用 HTML 格式)
-    #license= '<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
-    license= ""
+    license= '<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
   # Page config
   # 文章页面配置
   [params.page]
@@ -522,7 +738,7 @@ enableEmoji = true
   # Publisher Info just for SEO
   # 出版者信息，仅用于 SEO
   [params.publisher]
-    name = "edenzhong"
+    name = "xxxx"
     [params.publisher.logo]
       url = "logo.png"
       width = 127
@@ -620,7 +836,7 @@ enableEmoji = true
 # Author Info
 # 作者信息
 [author]
-  name = "edenz"
+  name = "xxxx"
   link = ""
 
 # Sitemap Info
