@@ -9,8 +9,8 @@ authorLink: "https://dillonzq.com"
 description: "探索 Hugo - LoveIt 主题的全部内容和背后的核心概念."
 license: ""
 
-tags: ["安装", "配置"]
-categories: ["documentation"]
+tags: ["主题配置"]
+categories: ["theme"]
 hiddenFromHomePage: false
 
 featuredImage: "/images/theme-documentation-basics/featured-image.jpg"

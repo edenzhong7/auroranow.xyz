@@ -1,16 +1,16 @@
 ---
 weight: 5
-title: "Emoji Support"
+title: "Emoji 支持"
 date: 2019-10-01T17:55:28+08:00
 lastmod: 2019-10-01T17:55:28+08:00
 draft: false
 author: "Dillon"
 authorLink: "https://dillonzq.com"
-description: "Guide to emoji usage in Hugo and LoveIt."
+description: "Hugo 和 LoveIt 中的 Emoji 的用法指南."
 license: ""
 
-tags: ["emoji"]
-categories: ["markdown"]
+tags: ["主题配置"]
+categories: ["theme"]
 hiddenFromHomePage: false
 
 featuredImage: "/images/emoji-support/featured-image.jpg"
@@ -26,37 +26,38 @@ share:
 comment: true
 ---
 
-Emoji can be enabled in a Hugo project in a number of ways.
+Emoji 可以通过多种方式在 Hugo 项目中启用.
 
 <!--more-->
 
-The [`emojify`](https://gohugo.io/functions/emojify/) function can be called directly in templates or [Inline Shortcodes](https://gohugo.io/templates/shortcode-templates/#inline-shortcodes).
+[`emojify`](https://gohugo.io/functions/emojify/) 方法可以直接在模板中调用, 或者使用 [内联 Shortcodes](https://gohugo.io/templates/shortcode-templates/#inline-shortcodes).
 
-To enable emoji globally, set `enableEmoji` to `true` in your site’s [configuration](https://gohugo.io/getting-started/configuration/) and then you can type emoji shorthand codes directly in content files.
+要全局使用 emoji, 需要在你的网站 [配置](https://gohugo.io/getting-started/configuration/) 中设置 `enableEmoji` 为 `true`,
+然后你就可以直接在文章中输入 emoji 的代码.
 
-These begin and end with a **colon** and include the **code** of an emoji:
+它们以**冒号**开头和结尾，并且包含 emoji 的 **代码**:
 
 ```markdown
-Gone camping! {?:}tent: Be back soon.
+去露营啦! {?:}tent: 很快就回来.
 
-That is so funny! {?:}joy:
+真开心! {?:}joy:
 ```
 
-The rendered output looks like this:
+呈现的输出效果如下:
 
-Gone camping! :tent: Be back soon.
+去露营啦! :tent: 很快就回来.
 
-That is so funny! :joy:
+真开心! :joy:
 
-## Emoji Cheat Sheet
+## Emoji 符号清单
 
-The emoji cheat sheet is a useful reference for emoji shorthand codes.
+Emoji 符号清单是 emoji 代码的非常有用的参考.
 
-### Smileys & Emotion
+### 表情与情感
 
-#### Face Smiling
+#### 笑脸表情
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:grinning:</span> | `grinning` | <span class="emoji">:smiley:</span> | `smiley` |
 | <span class="emoji">:smile:</span> | `smile` | <span class="emoji">:grin:</span> | `grin` |
@@ -66,31 +67,31 @@ The emoji cheat sheet is a useful reference for emoji shorthand codes.
 | <span class="emoji">:wink:</span> | `wink` | <span class="emoji">:blush:</span> | `blush` |
 | <span class="emoji">:innocent:</span> | `innocent` | | |
 
-#### Face Affection
+#### 爱意表情
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:heart_eyes:</span> | `heart_eyes` | <span class="emoji">:kissing_heart:</span> | `kissing_heart` |
 | <span class="emoji">:kissing:</span> | `kissing` | <span class="emoji">:relaxed:</span> | `relaxed` |
 | <span class="emoji">:kissing_closed_eyes:</span> | `kissing_closed_eyes` | <span class="emoji">:kissing_smiling_eyes:</span> | `kissing_smiling_eyes` |
 
-#### Face Tongue
+#### 吐舌头表情
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:yum:</span> | `yum` | <span class="emoji">:stuck_out_tongue:</span> | `stuck_out_tongue` |
 | <span class="emoji">:stuck_out_tongue_winking_eye:</span> | `stuck_out_tongue_winking_eye` | <span class="emoji">:stuck_out_tongue_closed_eyes:</span> | `stuck_out_tongue_closed_eyes` |
 | <span class="emoji">:money_mouth_face:</span> | `money_mouth_face` | | |
 
-#### Face Hand
+#### 带手的表情
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:hugs:</span> | `hugs` | <span class="emoji">:thinking:</span> | `thinking` |
 
-#### Face Neutral Skeptical
+#### 中性表情
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:zipper_mouth_face:</span> | `zipper_mouth_face` | <span class="emoji">:neutral_face:</span> | `neutral_face` |
 | <span class="emoji">:expressionless:</span> | `expressionless` | <span class="emoji">:no_mouth:</span> | `no_mouth` |
@@ -98,37 +99,37 @@ The emoji cheat sheet is a useful reference for emoji shorthand codes.
 | <span class="emoji">:roll_eyes:</span> | `roll_eyes` | <span class="emoji">:grimacing:</span> | `grimacing` |
 | <span class="emoji">:lying_face:</span> | `lying_face` | | |
 
-#### Face Sleepy
+#### 困倦的表情
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:relieved:</span> | `relieved` | <span class="emoji">:pensive:</span> | `pensive` |
 | <span class="emoji">:sleepy:</span> | `sleepy` | <span class="emoji">:drooling_face:</span> | `drooling_face` |
 | <span class="emoji">:sleeping:</span> | `sleeping` | | |
 
-#### Face Unwell
+#### 不适的表情
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:mask:</span> | `mask` | <span class="emoji">:face_with_thermometer:</span> | `face_with_thermometer` |
 | <span class="emoji">:face_with_head_bandage:</span> | `face_with_head_bandage` | <span class="emoji">:nauseated_face:</span> | `nauseated_face` |
 | <span class="emoji">:sneezing_face:</span> | `sneezing_face` | <span class="emoji">:dizzy_face:</span> | `dizzy_face` |
 
-#### Face Hat
+#### 戴帽子的表情
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:cowboy_hat_face:</span> | `cowboy_hat_face` | | |
 
-#### Face Glasses
+#### 戴眼镜的表情
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:sunglasses:</span> | `sunglasses` | <span class="emoji">:nerd_face:</span> | `nerd_face` |
 
-#### Face Concerned
+#### 担心的表情
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:confused:</span> | `confused` | <span class="emoji">:worried:</span> | `worried` |
 | <span class="emoji">:slightly_frowning_face:</span> | `slightly_frowning_face` | <span class="emoji">:frowning_face:</span> | `frowning_face` |
@@ -142,27 +143,27 @@ The emoji cheat sheet is a useful reference for emoji shorthand codes.
 | <span class="emoji">:disappointed:</span> | `disappointed` | <span class="emoji">:sweat:</span> | `sweat` |
 | <span class="emoji">:weary:</span> | `weary` | <span class="emoji">:tired_face:</span> | `tired_face` |
 
-#### Face Negative
+#### 否定的表情
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:triumph:</span> | `triumph` | <span class="emoji">:pout:</span> | `pout` <br /> `rage` |
 | <span class="emoji">:angry:</span> | `angry` | <span class="emoji">:smiling_imp:</span> | `smiling_imp` |
 | <span class="emoji">:imp:</span> | `imp` | <span class="emoji">:skull:</span> | `skull` |
 | <span class="emoji">:skull_and_crossbones:</span> | `skull_and_crossbones` | | |
 
-#### Face Costume
+#### 特殊打扮的表情
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:hankey:</span> | `hankey` <br /> `poop` <br /> `shit` | <span class="emoji">:clown_face:</span> | `clown_face` |
 | <span class="emoji">:japanese_ogre:</span> | `japanese_ogre` | <span class="emoji">:japanese_goblin:</span> | `japanese_goblin` |
 | <span class="emoji">:ghost:</span> | `ghost` | <span class="emoji">:alien:</span> | `alien` |
 | <span class="emoji">:space_invader:</span> | `space_invader` | <span class="emoji">:robot:</span> | `robot` |
 
-#### Cat Face
+#### 猫脸表情
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:smiley_cat:</span> | `smiley_cat` | <span class="emoji">:smile_cat:</span> | `smile_cat` |
 | <span class="emoji">:joy_cat:</span> | `joy_cat` | <span class="emoji">:heart_eyes_cat:</span> | `heart_eyes_cat` |
@@ -170,16 +171,16 @@ The emoji cheat sheet is a useful reference for emoji shorthand codes.
 | <span class="emoji">:scream_cat:</span> | `scream_cat` | <span class="emoji">:crying_cat_face:</span> | `crying_cat_face` |
 | <span class="emoji">:pouting_cat:</span> | `pouting_cat` | | |
 
-#### Monkey Face
+#### 猴脸表情
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:see_no_evil:</span> | `see_no_evil` | <span class="emoji">:hear_no_evil:</span> | `hear_no_evil` |
 | <span class="emoji">:speak_no_evil:</span> | `speak_no_evil` | | |
 
-#### Emotion
+#### 情感
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:kiss:</span> | `kiss` | <span class="emoji">:love_letter:</span> | `love_letter` |
 | <span class="emoji">:cupid:</span> | `cupid` | <span class="emoji">:gift_heart:</span> | `gift_heart` |
@@ -198,67 +199,67 @@ The emoji cheat sheet is a useful reference for emoji shorthand codes.
 | <span class="emoji">:right_anger_bubble:</span> | `right_anger_bubble` | <span class="emoji">:thought_balloon:</span> | `thought_balloon` |
 | <span class="emoji">:zzz:</span> | `zzz` | | |
 
-### People & Body
+### 人与身体
 
-#### Hand Fingers Open
+#### 张开手掌的手势
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:wave:</span> | `wave` | <span class="emoji">:raised_back_of_hand:</span> | `raised_back_of_hand` |
 | <span class="emoji">:raised_hand_with_fingers_splayed:</span> | `raised_hand_with_fingers_splayed` | <span class="emoji">:hand:</span> | `hand` <br /> `raised_hand` |
 | <span class="emoji">:vulcan_salute:</span> | `vulcan_salute` | | |
 
-#### Hand Fingers Partial
+#### 部分手指的手势
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:ok_hand:</span> | `ok_hand` | <span class="emoji">:v:</span> | `v` |
 | <span class="emoji">:crossed_fingers:</span> | `crossed_fingers` | <span class="emoji">:metal:</span> | `metal` |
 | <span class="emoji">:call_me_hand:</span> | `call_me_hand` | | |
 
-#### Hand Single Finger
+#### 一根手指的手势
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:point_left:</span> | `point_left` | <span class="emoji">:point_right:</span> | `point_right` |
 | <span class="emoji">:point_up_2:</span> | `point_up_2` | <span class="emoji">:fu:</span> | `fu` <br /> `middle_finger` |
 | <span class="emoji">:point_down:</span> | `point_down` | <span class="emoji">:point_up:</span> | `point_up` |
 
-#### Hand Fingers Closed
+#### 握紧的手势
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | :+1: | `:+1:` <br /> `thumbsup` | :-1: | `:-1:` <br /> `thumbsdown` |
 | <span class="emoji">:fist:</span> | `fist` <br /> `fist_raised` | <span class="emoji">:facepunch:</span> | `facepunch` <br /> `fist_oncoming` <br /> `punch` |
 | <span class="emoji">:fist_left:</span> | `fist_left` | <span class="emoji">:fist_right:</span> | `fist_right` |
 
-#### Hands
+#### 两只手
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:clap:</span> | `clap` | <span class="emoji">:raised_hands:</span> | `raised_hands` |
 | <span class="emoji">:open_hands:</span> | `open_hands` | <span class="emoji">:handshake:</span> | `handshake` |
 | <span class="emoji">:pray:</span> | `pray` | | |
 
-#### Hand Prop
+#### 握住东西的手势
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:writing_hand:</span> | `writing_hand` | <span class="emoji">:nail_care:</span> | `nail_care` |
 | <span class="emoji">:selfie:</span> | `selfie` | | |
 
-#### Body Parts
+#### 身体部位
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:muscle:</span> | `muscle` | <span class="emoji">:ear:</span> | `ear` |
 | <span class="emoji">:nose:</span> | `nose` | <span class="emoji">:eyes:</span> | `eyes` |
 | <span class="emoji">:eye:</span> | `eye` | <span class="emoji">:tongue:</span> | `tongue` |
 | <span class="emoji">:lips:</span> | `lips` | | |
 
-#### Person
+#### 人
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:baby:</span> | `baby` | <span class="emoji">:boy:</span> | `boy` |
 | <span class="emoji">:girl:</span> | `girl` | <span class="emoji">:blonde_man:</span> | `blonde_man` <br /> `person_with_blond_hair` |
@@ -266,9 +267,9 @@ The emoji cheat sheet is a useful reference for emoji shorthand codes.
 | <span class="emoji">:blonde_woman:</span> | `blonde_woman` | <span class="emoji">:older_man:</span> | `older_man` |
 | <span class="emoji">:older_woman:</span> | `older_woman` | | |
 
-#### Person Gesture
+#### 身体动作
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:frowning_woman:</span> | `frowning_woman` <br /> `person_frowning` | <span class="emoji">:frowning_man:</span> | `frowning_man` |
 | <span class="emoji">:person_with_pouting_face:</span> | `person_with_pouting_face` <br /> `pouting_woman` | <span class="emoji">:pouting_man:</span> | `pouting_man` |
@@ -280,9 +281,9 @@ The emoji cheat sheet is a useful reference for emoji shorthand codes.
 | <span class="emoji">:man_facepalming:</span> | `man_facepalming` | <span class="emoji">:woman_facepalming:</span> | `woman_facepalming` |
 | <span class="emoji">:man_shrugging:</span> | `man_shrugging` | <span class="emoji">:woman_shrugging:</span> | `woman_shrugging` |
 
-#### Person Role
+#### 人物角色
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:man_health_worker:</span> | `man_health_worker` | <span class="emoji">:woman_health_worker:</span> | `woman_health_worker` |
 | <span class="emoji">:man_student:</span> | `man_student` | <span class="emoji">:woman_student:</span> | `woman_student` |
@@ -309,16 +310,16 @@ The emoji cheat sheet is a useful reference for emoji shorthand codes.
 | <span class="emoji">:man_with_gua_pi_mao:</span> | `man_with_gua_pi_mao` | <span class="emoji">:man_in_tuxedo:</span> | `man_in_tuxedo` |
 | <span class="emoji">:bride_with_veil:</span> | `bride_with_veil` | <span class="emoji">:pregnant_woman:</span> | `pregnant_woman` |
 
-#### Person Fantasy
+#### 幻想的人物
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:angel:</span> | `angel` | <span class="emoji">:santa:</span> | `santa` |
 | <span class="emoji">:mrs_claus:</span> | `mrs_claus` | | |
 
-#### Person Activity
+#### 人物活动
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:massage:</span> | `massage` <br /> `massage_woman` | <span class="emoji">:massage_man:</span> | `massage_man` |
 | <span class="emoji">:haircut:</span> | `haircut` <br /> `haircut_woman` | <span class="emoji">:haircut_man:</span> | `haircut_man` |
@@ -328,9 +329,9 @@ The emoji cheat sheet is a useful reference for emoji shorthand codes.
 | <span class="emoji">:business_suit_levitating:</span> | `business_suit_levitating` | <span class="emoji">:dancers:</span> | `dancers` <br /> `dancing_women` |
 | <span class="emoji">:dancing_men:</span> | `dancing_men` | | |
 
-#### Person Sport
+#### 体育
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:person_fencing:</span> | `person_fencing` | <span class="emoji">:horse_racing:</span> | `horse_racing` |
 | <span class="emoji">:skier:</span> | `skier` | <span class="emoji">:snowboarder:</span> | `snowboarder` |
@@ -348,15 +349,15 @@ The emoji cheat sheet is a useful reference for emoji shorthand codes.
 | <span class="emoji">:man_playing_handball:</span> | `man_playing_handball` | <span class="emoji">:woman_playing_handball:</span> | `woman_playing_handball` |
 | <span class="emoji">:man_juggling:</span> | `man_juggling` | <span class="emoji">:woman_juggling:</span> | `woman_juggling` |
 
-#### Person Resting
+#### 休息
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:bath:</span> | `bath` | <span class="emoji">:sleeping_bed:</span> | `sleeping_bed` |
 
-#### Family
+#### 家庭
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:two_women_holding_hands:</span> | `two_women_holding_hands` | <span class="emoji">:couple:</span> | `couple` |
 | <span class="emoji">:two_men_holding_hands:</span> | `two_men_holding_hands` | <span class="emoji">:couplekiss_man_woman:</span> | `couplekiss_man_woman` |
@@ -376,18 +377,18 @@ The emoji cheat sheet is a useful reference for emoji shorthand codes.
 | <span class="emoji">:family_woman_boy_boy:</span> | `family_woman_boy_boy` | <span class="emoji">:family_woman_girl:</span> | `family_woman_girl` |
 | <span class="emoji">:family_woman_girl_boy:</span> | `family_woman_girl_boy` | <span class="emoji">:family_woman_girl_girl:</span> | `family_woman_girl_girl` |
 
-#### Person Symbol
+#### 人物符号
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:speaking_head:</span> | `speaking_head` | <span class="emoji">:bust_in_silhouette:</span> | `bust_in_silhouette` |
 | <span class="emoji">:busts_in_silhouette:</span> | `busts_in_silhouette` | <span class="emoji">:footprints:</span> | `footprints` |
 
-### Animals & Nature
+### 动物与自然
 
-#### Animal Mammal
+#### 哺乳动物
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:monkey_face:</span> | `monkey_face` | <span class="emoji">:monkey:</span> | `monkey` |
 | <span class="emoji">:gorilla:</span> | `gorilla` | <span class="emoji">:dog:</span> | `dog` |
@@ -413,9 +414,9 @@ The emoji cheat sheet is a useful reference for emoji shorthand codes.
 | <span class="emoji">:koala:</span> | `koala` | <span class="emoji">:panda_face:</span> | `panda_face` |
 | <span class="emoji">:feet:</span> | `feet` <br /> `paw_prints` | | |
 
-#### Animal Bird
+#### 鸟类
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:turkey:</span> | `turkey` | <span class="emoji">:chicken:</span> | `chicken` |
 | <span class="emoji">:rooster:</span> | `rooster` | <span class="emoji">:hatching_chick:</span> | `hatching_chick` |
@@ -424,23 +425,23 @@ The emoji cheat sheet is a useful reference for emoji shorthand codes.
 | <span class="emoji">:dove:</span> | `dove` | <span class="emoji">:eagle:</span> | `eagle` |
 | <span class="emoji">:duck:</span> | `duck` | <span class="emoji">:owl:</span> | `owl` |
 
-#### Animal Amphibian
+#### 两栖动物
 
 | icon | code | icon | code |
 | :-: | - | :-: | - |
 | <span class="emoji">:frog:</span> | `frog` |
 
-#### Animal Reptile
+#### 爬虫类
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:crocodile:</span> | `crocodile` | <span class="emoji">:turtle:</span> | `turtle` |
 | <span class="emoji">:lizard:</span> | `lizard` | <span class="emoji">:snake:</span> | `snake` |
 | <span class="emoji">:dragon_face:</span> | `dragon_face` | <span class="emoji">:dragon:</span> | `dragon` |
 
-#### Animal Marine
+#### 海洋动物
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:whale:</span> | `whale` | <span class="emoji">:whale2:</span> | `whale2` |
 | <span class="emoji">:dolphin:</span> | `dolphin` <br /> `flipper` | <span class="emoji">:fish:</span> | `fish` |
@@ -448,9 +449,9 @@ The emoji cheat sheet is a useful reference for emoji shorthand codes.
 | <span class="emoji">:shark:</span> | `shark` | <span class="emoji">:octopus:</span> | `octopus` |
 | <span class="emoji">:shell:</span> | `shell` | | |
 
-#### Animal Bug
+#### 虫类
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:snail:</span> | `snail` | <span class="emoji">:butterfly:</span> | `butterfly` |
 | <span class="emoji">:bug:</span> | `bug` | <span class="emoji">:ant:</span> | `ant` |
@@ -458,9 +459,9 @@ The emoji cheat sheet is a useful reference for emoji shorthand codes.
 | <span class="emoji">:spider:</span> | `spider` | <span class="emoji">:spider_web:</span> | `spider_web` |
 | <span class="emoji">:scorpion:</span> | `scorpion` | | |
 
-#### Plant Flower
+#### 花类植物
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:bouquet:</span> | `bouquet` | <span class="emoji">:cherry_blossom:</span> | `cherry_blossom` |
 | <span class="emoji">:white_flower:</span> | `white_flower` | <span class="emoji">:rosette:</span> | `rosette` |
@@ -468,9 +469,9 @@ The emoji cheat sheet is a useful reference for emoji shorthand codes.
 | <span class="emoji">:hibiscus:</span> | `hibiscus` | <span class="emoji">:sunflower:</span> | `sunflower` |
 | <span class="emoji">:blossom:</span> | `blossom` | <span class="emoji">:tulip:</span> | `tulip` |
 
-#### Plant Other
+#### 其它植物
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:seedling:</span> | `seedling` | <span class="emoji">:evergreen_tree:</span> | `evergreen_tree` |
 | <span class="emoji">:deciduous_tree:</span> | `deciduous_tree` | <span class="emoji">:palm_tree:</span> | `palm_tree` |
@@ -479,11 +480,11 @@ The emoji cheat sheet is a useful reference for emoji shorthand codes.
 | <span class="emoji">:four_leaf_clover:</span> | `four_leaf_clover` | <span class="emoji">:maple_leaf:</span> | `maple_leaf` |
 | <span class="emoji">:fallen_leaf:</span> | `fallen_leaf` | <span class="emoji">:leaves:</span> | `leaves` |
 
-### Food & Drink
+### 食物与饮料
 
-#### Food Fruit
+#### 水果
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:grapes:</span> | `grapes` | <span class="emoji">:melon:</span> | `melon` |
 | <span class="emoji">:watermelon:</span> | `watermelon` | <span class="emoji">:mandarin:</span> | `mandarin` <br /> `orange` <br /> `tangerine` |
@@ -494,9 +495,9 @@ The emoji cheat sheet is a useful reference for emoji shorthand codes.
 | <span class="emoji">:strawberry:</span> | `strawberry` | <span class="emoji">:kiwi_fruit:</span> | `kiwi_fruit` |
 | <span class="emoji">:tomato:</span> | `tomato` | | |
 
-#### Food Vegetable
+#### 蔬菜
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:avocado:</span> | `avocado` | <span class="emoji">:eggplant:</span> | `eggplant` |
 | <span class="emoji">:potato:</span> | `potato` | <span class="emoji">:carrot:</span> | `carrot` |
@@ -504,9 +505,9 @@ The emoji cheat sheet is a useful reference for emoji shorthand codes.
 | <span class="emoji">:cucumber:</span> | `cucumber` | <span class="emoji">:mushroom:</span> | `mushroom` |
 | <span class="emoji">:peanuts:</span> | `peanuts` | <span class="emoji">:chestnut:</span> | `chestnut` |
 
-#### Food Prepared
+#### 快餐
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:bread:</span> | `bread` | <span class="emoji">:croissant:</span> | `croissant` |
 | <span class="emoji">:baguette_bread:</span> | `baguette_bread` | <span class="emoji">:pancakes:</span> | `pancakes` |
@@ -520,9 +521,9 @@ The emoji cheat sheet is a useful reference for emoji shorthand codes.
 | <span class="emoji">:stew:</span> | `stew` | <span class="emoji">:green_salad:</span> | `green_salad` |
 | <span class="emoji">:popcorn:</span> | `popcorn` | | |
 
-#### Food Asian
+#### 亚洲食物
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:bento:</span> | `bento` | <span class="emoji">:rice_cracker:</span> | `rice_cracker` |
 | <span class="emoji">:rice_ball:</span> | `rice_ball` | <span class="emoji">:rice:</span> | `rice` |
@@ -532,16 +533,16 @@ The emoji cheat sheet is a useful reference for emoji shorthand codes.
 | <span class="emoji">:fried_shrimp:</span> | `fried_shrimp` | <span class="emoji">:fish_cake:</span> | `fish_cake` |
 | <span class="emoji">:dango:</span> | `dango` | | |
 
-#### Food Marine
+#### 海鲜
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:crab:</span> | `crab` | <span class="emoji">:shrimp:</span> | `shrimp` |
 | <span class="emoji">:squid:</span> | `squid` | | |
 
-#### Food Sweet
+#### 甜点
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:icecream:</span> | `icecream` | <span class="emoji">:shaved_ice:</span> | `shaved_ice` |
 | <span class="emoji">:ice_cream:</span> | `ice_cream` | <span class="emoji">:doughnut:</span> | `doughnut` |
@@ -550,9 +551,9 @@ The emoji cheat sheet is a useful reference for emoji shorthand codes.
 | <span class="emoji">:candy:</span> | `candy` | <span class="emoji">:lollipop:</span> | `lollipop` |
 | <span class="emoji">:custard:</span> | `custard` | <span class="emoji">:honey_pot:</span> | `honey_pot` |
 
-#### Drink
+#### 饮料
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:baby_bottle:</span> | `baby_bottle` | <span class="emoji">:milk_glass:</span> | `milk_glass` |
 | <span class="emoji">:coffee:</span> | `coffee` | <span class="emoji">:tea:</span> | `tea` |
@@ -562,27 +563,27 @@ The emoji cheat sheet is a useful reference for emoji shorthand codes.
 | <span class="emoji">:beers:</span> | `beers` | <span class="emoji">:clinking_glasses:</span> | `clinking_glasses` |
 | <span class="emoji">:tumbler_glass:</span> | `tumbler_glass` | | |
 
-#### Dishware
+#### 餐具
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:plate_with_cutlery:</span> | `plate_with_cutlery` | <span class="emoji">:fork_and_knife:</span> | `fork_and_knife` |
 | <span class="emoji">:spoon:</span> | `spoon` | <span class="emoji">:hocho:</span> | `hocho` <br /> `knife` |
 | <span class="emoji">:amphora:</span> | `amphora` | | |
 
-### Travel & Places
+### 旅游与地理
 
-#### Place Map
+#### 地图
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:earth_africa:</span> | `earth_africa` | <span class="emoji">:earth_americas:</span> | `earth_americas` |
 | <span class="emoji">:earth_asia:</span> | `earth_asia` | <span class="emoji">:globe_with_meridians:</span> | `globe_with_meridians` |
 | <span class="emoji">:world_map:</span> | `world_map` | <span class="emoji">:japan:</span> | `japan` |
 
-#### Place Geographic
+#### 地理现象
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:mountain_snow:</span> | `mountain_snow` | <span class="emoji">:mountain:</span> | `mountain` |
 | <span class="emoji">:volcano:</span> | `volcano` | <span class="emoji">:mount_fuji:</span> | `mount_fuji` |
@@ -590,9 +591,9 @@ The emoji cheat sheet is a useful reference for emoji shorthand codes.
 | <span class="emoji">:desert:</span> | `desert` | <span class="emoji">:desert_island:</span> | `desert_island` |
 | <span class="emoji">:national_park:</span> | `national_park` | | |
 
-#### Place Building
+#### 建筑物
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:stadium:</span> | `stadium` | <span class="emoji">:classical_building:</span> | `classical_building` |
 | <span class="emoji">:building_construction:</span> | `building_construction` | <span class="emoji">:houses:</span> | `houses` |
@@ -607,17 +608,17 @@ The emoji cheat sheet is a useful reference for emoji shorthand codes.
 | <span class="emoji">:wedding:</span> | `wedding` | <span class="emoji">:tokyo_tower:</span> | `tokyo_tower` |
 | <span class="emoji">:statue_of_liberty:</span> | `statue_of_liberty` | | |
 
-#### Place Religious
+#### 宗教建筑
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:church:</span> | `church` | <span class="emoji">:mosque:</span> | `mosque` |
 | <span class="emoji">:synagogue:</span> | `synagogue` | <span class="emoji">:shinto_shrine:</span> | `shinto_shrine` |
 | <span class="emoji">:kaaba:</span> | `kaaba` | | |
 
-#### Place Other
+#### 其它地点
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:fountain:</span> | `fountain` | <span class="emoji">:tent:</span> | `tent` |
 | <span class="emoji">:foggy:</span> | `foggy` | <span class="emoji">:night_with_stars:</span> | `night_with_stars` |
@@ -628,9 +629,9 @@ The emoji cheat sheet is a useful reference for emoji shorthand codes.
 | <span class="emoji">:ferris_wheel:</span> | `ferris_wheel` | <span class="emoji">:roller_coaster:</span> | `roller_coaster` |
 | <span class="emoji">:barber:</span> | `barber` | <span class="emoji">:circus_tent:</span> | `circus_tent` |
 
-#### Transport Ground
+#### 陆路运输
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:steam_locomotive:</span> | `steam_locomotive` | <span class="emoji">:railway_car:</span> | `railway_car` |
 | <span class="emoji">:bullettrain_side:</span> | `bullettrain_side` | <span class="emoji">:bullettrain_front:</span> | `bullettrain_front` |
@@ -655,18 +656,18 @@ The emoji cheat sheet is a useful reference for emoji shorthand codes.
 | <span class="emoji">:vertical_traffic_light:</span> | `vertical_traffic_light` | <span class="emoji">:stop_sign:</span> | `stop_sign` |
 | <span class="emoji">:construction:</span> | `construction` | | |
 
-#### Transport Water
+#### 水路运输
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:anchor:</span> | `anchor` | <span class="emoji">:boat:</span> | `boat` <br /> `sailboat` |
 | <span class="emoji">:canoe:</span> | `canoe` | <span class="emoji">:speedboat:</span> | `speedboat` |
 | <span class="emoji">:passenger_ship:</span> | `passenger_ship` | <span class="emoji">:ferry:</span> | `ferry` |
 | <span class="emoji">:motor_boat:</span> | `motor_boat` | <span class="emoji">:ship:</span> | `ship` |
 
-#### Transport Air
+#### 空中运输
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:airplane:</span> | `airplane` | <span class="emoji">:small_airplane:</span> | `small_airplane` |
 | <span class="emoji">:flight_departure:</span> | `flight_departure` | <span class="emoji">:flight_arrival:</span> | `flight_arrival` |
@@ -675,15 +676,15 @@ The emoji cheat sheet is a useful reference for emoji shorthand codes.
 | <span class="emoji">:aerial_tramway:</span> | `aerial_tramway` | <span class="emoji">:artificial_satellite:</span> | `artificial_satellite` |
 | <span class="emoji">:rocket:</span> | `rocket` | | |
 
-#### Hotel
+#### 旅馆
 
 | icon | code | icon | code |
 | :-: | - | :-: | - |
 | <span class="emoji">:bellhop_bell:</span> | `bellhop_bell` |
 
-#### Time
+#### 时间
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:hourglass:</span> | `hourglass` | <span class="emoji">:hourglass_flowing_sand:</span> | `hourglass_flowing_sand` |
 | <span class="emoji">:watch:</span> | `watch` | <span class="emoji">:alarm_clock:</span> | `alarm_clock` |
@@ -702,9 +703,9 @@ The emoji cheat sheet is a useful reference for emoji shorthand codes.
 | <span class="emoji">:clock1030:</span> | `clock1030` | <span class="emoji">:clock11:</span> | `clock11` |
 | <span class="emoji">:clock1130:</span> | `clock1130` | | |
 
-#### Sky & Weather
+#### 天空与天气
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:new_moon:</span> | `new_moon` | <span class="emoji">:waxing_crescent_moon:</span> | `waxing_crescent_moon` |
 | <span class="emoji">:first_quarter_moon:</span> | `first_quarter_moon` | <span class="emoji">:moon:</span> | `moon` <br /> `waxing_gibbous_moon` |
@@ -730,11 +731,11 @@ The emoji cheat sheet is a useful reference for emoji shorthand codes.
 | <span class="emoji">:comet:</span> | `comet` | <span class="emoji">:fire:</span> | `fire` |
 | <span class="emoji">:droplet:</span> | `droplet` | <span class="emoji">:ocean:</span> | `ocean` |
 
-### Activities
+### 活动
 
-#### Event
+#### 事件
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:jack_o_lantern:</span> | `jack_o_lantern` | <span class="emoji">:christmas_tree:</span> | `christmas_tree` |
 | <span class="emoji">:fireworks:</span> | `fireworks` | <span class="emoji">:sparkler:</span> | `sparkler` |
@@ -747,17 +748,17 @@ The emoji cheat sheet is a useful reference for emoji shorthand codes.
 | <span class="emoji">:reminder_ribbon:</span> | `reminder_ribbon` | <span class="emoji">:tickets:</span> | `tickets` |
 | <span class="emoji">:ticket:</span> | `ticket` | | |
 
-#### Award Medal
+#### 奖杯与奖牌
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:medal_military:</span> | `medal_military` | <span class="emoji">:trophy:</span> | `trophy` |
 | <span class="emoji">:medal_sports:</span> | `medal_sports` | <span class="emoji">:1st_place_medal:</span> | `1st_place_medal` |
 | <span class="emoji">:2nd_place_medal:</span> | `2nd_place_medal` | <span class="emoji">:3rd_place_medal:</span> | `3rd_place_medal` |
 
-#### Sport
+#### 体育运动
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:soccer:</span> | `soccer` | <span class="emoji">:baseball:</span> | `baseball` |
 | <span class="emoji">:basketball:</span> | `basketball` | <span class="emoji">:volleyball:</span> | `volleyball` |
@@ -771,9 +772,9 @@ The emoji cheat sheet is a useful reference for emoji shorthand codes.
 | <span class="emoji">:fishing_pole_and_fish:</span> | `fishing_pole_and_fish` | <span class="emoji">:running_shirt_with_sash:</span> | `running_shirt_with_sash` |
 | <span class="emoji">:ski:</span> | `ski` | | |
 
-#### Game
+#### 游戏
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:dart:</span> | `dart` | <span class="emoji">:8ball:</span> | `8ball` |
 | <span class="emoji">:crystal_ball:</span> | `crystal_ball` | <span class="emoji">:video_game:</span> | `video_game` |
@@ -783,18 +784,18 @@ The emoji cheat sheet is a useful reference for emoji shorthand codes.
 | <span class="emoji">:clubs:</span> | `clubs` | <span class="emoji">:black_joker:</span> | `black_joker` |
 | <span class="emoji">:mahjong:</span> | `mahjong` | <span class="emoji">:flower_playing_cards:</span> | `flower_playing_cards` |
 
-#### Arts & Crafts
+#### 艺术与工艺
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:performing_arts:</span> | `performing_arts` | <span class="emoji">:framed_picture:</span> | `framed_picture` |
 | <span class="emoji">:art:</span> | `art` | | |
 
-### Objects
+### 物品
 
-#### Clothing
+#### 服装
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:eyeglasses:</span> | `eyeglasses` | <span class="emoji">:dark_sunglasses:</span> | `dark_sunglasses` |
 | <span class="emoji">:necktie:</span> | `necktie` | <span class="emoji">:shirt:</span> | `shirt` <br /> `tshirt` |
@@ -811,9 +812,9 @@ The emoji cheat sheet is a useful reference for emoji shorthand codes.
 | <span class="emoji">:prayer_beads:</span> | `prayer_beads` | <span class="emoji">:lipstick:</span> | `lipstick` |
 | <span class="emoji">:ring:</span> | `ring` | <span class="emoji">:gem:</span> | `gem` |
 
-#### Sound
+#### 声音
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:mute:</span> | `mute` | <span class="emoji">:speaker:</span> | `speaker` |
 | <span class="emoji">:sound:</span> | `sound` | <span class="emoji">:loud_sound:</span> | `loud_sound` |
@@ -821,9 +822,9 @@ The emoji cheat sheet is a useful reference for emoji shorthand codes.
 | <span class="emoji">:postal_horn:</span> | `postal_horn` | <span class="emoji">:bell:</span> | `bell` |
 | <span class="emoji">:no_bell:</span> | `no_bell` | | |
 
-#### Music
+#### 音乐
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:musical_score:</span> | `musical_score` | <span class="emoji">:musical_note:</span> | `musical_note` |
 | <span class="emoji">:notes:</span> | `notes` | <span class="emoji">:studio_microphone:</span> | `studio_microphone` |
@@ -831,25 +832,25 @@ The emoji cheat sheet is a useful reference for emoji shorthand codes.
 | <span class="emoji">:microphone:</span> | `microphone` | <span class="emoji">:headphones:</span> | `headphones` |
 | <span class="emoji">:radio:</span> | `radio` | | |
 
-#### Musical Instrument
+#### 乐器
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:saxophone:</span> | `saxophone` | <span class="emoji">:guitar:</span> | `guitar` |
 | <span class="emoji">:musical_keyboard:</span> | `musical_keyboard` | <span class="emoji">:trumpet:</span> | `trumpet` |
 | <span class="emoji">:violin:</span> | `violin` | <span class="emoji">:drum:</span> | `drum` |
 
-#### Phone
+#### 电话
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:iphone:</span> | `iphone` | <span class="emoji">:calling:</span> | `calling` |
 | <span class="emoji">:phone:</span> | `phone` <br /> `telephone` | <span class="emoji">:telephone_receiver:</span> | `telephone_receiver` |
 | <span class="emoji">:pager:</span> | `pager` | <span class="emoji">:fax:</span> | `fax` |
 
-#### Computer
+#### 电脑
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:battery:</span> | `battery` | <span class="emoji">:electric_plug:</span> | `electric_plug` |
 | <span class="emoji">:computer:</span> | `computer` | <span class="emoji">:desktop_computer:</span> | `desktop_computer` |
@@ -858,9 +859,9 @@ The emoji cheat sheet is a useful reference for emoji shorthand codes.
 | <span class="emoji">:minidisc:</span> | `minidisc` | <span class="emoji">:floppy_disk:</span> | `floppy_disk` |
 | <span class="emoji">:cd:</span> | `cd` | <span class="emoji">:dvd:</span> | `dvd` |
 
-#### Light & Video
+#### 灯光与影像
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:movie_camera:</span> | `movie_camera` | <span class="emoji">:film_strip:</span> | `film_strip` |
 | <span class="emoji">:film_projector:</span> | `film_projector` | <span class="emoji">:clapper:</span> | `clapper` |
@@ -871,9 +872,9 @@ The emoji cheat sheet is a useful reference for emoji shorthand codes.
 | <span class="emoji">:bulb:</span> | `bulb` | <span class="emoji">:flashlight:</span> | `flashlight` |
 | <span class="emoji">:izakaya_lantern:</span> | `izakaya_lantern` <br /> `lantern` | | |
 
-#### Book Paper
+#### 书与纸张
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:notebook_with_decorative_cover:</span> | `notebook_with_decorative_cover` | <span class="emoji">:closed_book:</span> | `closed_book` |
 | <span class="emoji">:book:</span> | `book` <br /> `open_book` | <span class="emoji">:green_book:</span> | `green_book` |
@@ -885,18 +886,18 @@ The emoji cheat sheet is a useful reference for emoji shorthand codes.
 | <span class="emoji">:bookmark_tabs:</span> | `bookmark_tabs` | <span class="emoji">:bookmark:</span> | `bookmark` |
 | <span class="emoji">:label:</span> | `label` | | |
 
-#### Money
+#### 钱
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:moneybag:</span> | `moneybag` | <span class="emoji">:yen:</span> | `yen` |
 | <span class="emoji">:dollar:</span> | `dollar` | <span class="emoji">:euro:</span> | `euro` |
 | <span class="emoji">:pound:</span> | `pound` | <span class="emoji">:money_with_wings:</span> | `money_with_wings` |
 | <span class="emoji">:credit_card:</span> | `credit_card` | <span class="emoji">:chart:</span> | `chart` |
 
-#### Mail
+#### 邮件
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:email:</span> | `email` <br /> `envelope` | :e-mail: | `:e-mail:` |
 | <span class="emoji">:incoming_envelope:</span> | `incoming_envelope` | <span class="emoji">:envelope_with_arrow:</span> | `envelope_with_arrow` |
@@ -906,18 +907,18 @@ The emoji cheat sheet is a useful reference for emoji shorthand codes.
 | <span class="emoji">:mailbox_with_no_mail:</span> | `mailbox_with_no_mail` | <span class="emoji">:postbox:</span> | `postbox` |
 | <span class="emoji">:ballot_box:</span> | `ballot_box` | | |
 
-#### Writing
+#### 书写
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:pencil2:</span> | `pencil2` | <span class="emoji">:black_nib:</span> | `black_nib` |
 | <span class="emoji">:fountain_pen:</span> | `fountain_pen` | <span class="emoji">:pen:</span> | `pen` |
 | <span class="emoji">:paintbrush:</span> | `paintbrush` | <span class="emoji">:crayon:</span> | `crayon` |
 | <span class="emoji">:memo:</span> | `memo` <br /> `pencil` | | |
 
-#### Office
+#### 办公
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:briefcase:</span> | `briefcase` | <span class="emoji">:file_folder:</span> | `file_folder` |
 | <span class="emoji">:open_file_folder:</span> | `open_file_folder` | <span class="emoji">:card_index_dividers:</span> | `card_index_dividers` |
@@ -932,17 +933,17 @@ The emoji cheat sheet is a useful reference for emoji shorthand codes.
 | <span class="emoji">:card_file_box:</span> | `card_file_box` | <span class="emoji">:file_cabinet:</span> | `file_cabinet` |
 | <span class="emoji">:wastebasket:</span> | `wastebasket` | | |
 
-#### Lock
+#### 锁
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:lock:</span> | `lock` | <span class="emoji">:unlock:</span> | `unlock` |
 | <span class="emoji">:lock_with_ink_pen:</span> | `lock_with_ink_pen` | <span class="emoji">:closed_lock_with_key:</span> | `closed_lock_with_key` |
 | <span class="emoji">:key:</span> | `key` | <span class="emoji">:old_key:</span> | `old_key` |
 
-#### Tool
+#### 工具
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:hammer:</span> | `hammer` | <span class="emoji">:pick:</span> | `pick` |
 | <span class="emoji">:hammer_and_pick:</span> | `hammer_and_pick` | <span class="emoji">:hammer_and_wrench:</span> | `hammer_and_wrench` |
@@ -953,40 +954,40 @@ The emoji cheat sheet is a useful reference for emoji shorthand codes.
 | <span class="emoji">:clamp:</span> | `clamp` | <span class="emoji">:balance_scale:</span> | `balance_scale` |
 | <span class="emoji">:link:</span> | `link` | <span class="emoji">:chains:</span> | `chains` |
 
-#### Science
+#### 科学
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:alembic:</span> | `alembic` | <span class="emoji">:microscope:</span> | `microscope` |
 | <span class="emoji">:telescope:</span> | `telescope` | <span class="emoji">:satellite:</span> | `satellite` |
 
-#### Medical
+#### 医疗
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:syringe:</span> | `syringe` | <span class="emoji">:pill:</span> | `pill` |
 
-#### Household
+#### 生活用品
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:door:</span> | `door` | <span class="emoji">:bed:</span> | `bed` |
 | <span class="emoji">:couch_and_lamp:</span> | `couch_and_lamp` | <span class="emoji">:toilet:</span> | `toilet` |
 | <span class="emoji">:shower:</span> | `shower` | <span class="emoji">:bathtub:</span> | `bathtub` |
 | <span class="emoji">:shopping_cart:</span> | `shopping_cart` | | |
 
-#### Other Object
+#### 其它物品
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:smoking:</span> | `smoking` | <span class="emoji">:coffin:</span> | `coffin` |
 | <span class="emoji">:funeral_urn:</span> | `funeral_urn` | <span class="emoji">:moyai:</span> | `moyai` |
 
-### Symbols
+### 符号
 
-#### Transport Sign
+#### 交通标识
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:atm:</span> | `atm` | <span class="emoji">:put_litter_in_its_place:</span> | `put_litter_in_its_place` |
 | <span class="emoji">:potable_water:</span> | `potable_water` | <span class="emoji">:wheelchair:</span> | `wheelchair` |
@@ -996,9 +997,9 @@ The emoji cheat sheet is a useful reference for emoji shorthand codes.
 | <span class="emoji">:customs:</span> | `customs` | <span class="emoji">:baggage_claim:</span> | `baggage_claim` |
 | <span class="emoji">:left_luggage:</span> | `left_luggage` | | |
 
-#### Warning
+#### 警告
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:warning:</span> | `warning` | <span class="emoji">:children_crossing:</span> | `children_crossing` |
 | <span class="emoji">:no_entry:</span> | `no_entry` | <span class="emoji">:no_entry_sign:</span> | `no_entry_sign` |
@@ -1008,9 +1009,9 @@ The emoji cheat sheet is a useful reference for emoji shorthand codes.
 | <span class="emoji">:underage:</span> | `underage` | <span class="emoji">:radioactive:</span> | `radioactive` |
 | <span class="emoji">:biohazard:</span> | `biohazard` | | |
 
-#### Arrow
+#### 箭头
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:arrow_up:</span> | `arrow_up` | <span class="emoji">:arrow_upper_right:</span> | `arrow_upper_right` |
 | <span class="emoji">:arrow_right:</span> | `arrow_right` | <span class="emoji">:arrow_lower_right:</span> | `arrow_lower_right` |
@@ -1024,9 +1025,9 @@ The emoji cheat sheet is a useful reference for emoji shorthand codes.
 | <span class="emoji">:on:</span> | `on` | <span class="emoji">:soon:</span> | `soon` |
 | <span class="emoji">:top:</span> | `top` | | |
 
-#### Religion
+#### 宗教
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:place_of_worship:</span> | `place_of_worship` | <span class="emoji">:atom_symbol:</span> | `atom_symbol` |
 | <span class="emoji">:om:</span> | `om` | <span class="emoji">:star_of_david:</span> | `star_of_david` |
@@ -1035,9 +1036,9 @@ The emoji cheat sheet is a useful reference for emoji shorthand codes.
 | <span class="emoji">:star_and_crescent:</span> | `star_and_crescent` | <span class="emoji">:peace_symbol:</span> | `peace_symbol` |
 | <span class="emoji">:menorah:</span> | `menorah` | <span class="emoji">:six_pointed_star:</span> | `six_pointed_star` |
 
-#### Zodiac
+#### 生肖
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:aries:</span> | `aries` | <span class="emoji">:taurus:</span> | `taurus` |
 | <span class="emoji">:gemini:</span> | `gemini` | <span class="emoji">:cancer:</span> | `cancer` |
@@ -1047,9 +1048,9 @@ The emoji cheat sheet is a useful reference for emoji shorthand codes.
 | <span class="emoji">:aquarius:</span> | `aquarius` | <span class="emoji">:pisces:</span> | `pisces` |
 | <span class="emoji">:ophiuchus:</span> | `ophiuchus` | | |
 
-#### Av Symbol
+#### 影像符号
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:twisted_rightwards_arrows:</span> | `twisted_rightwards_arrows` | <span class="emoji">:repeat:</span> | `repeat` |
 | <span class="emoji">:repeat_one:</span> | `repeat_one` | <span class="emoji">:arrow_forward:</span> | `arrow_forward` |
@@ -1064,31 +1065,31 @@ The emoji cheat sheet is a useful reference for emoji shorthand codes.
 | <span class="emoji">:signal_strength:</span> | `signal_strength` | <span class="emoji">:vibration_mode:</span> | `vibration_mode` |
 | <span class="emoji">:mobile_phone_off:</span> | `mobile_phone_off` | | |
 
-#### Math
+#### 数学
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:heavy_multiplication_x:</span> | `heavy_multiplication_x` | <span class="emoji">:heavy_plus_sign:</span> | `heavy_plus_sign` |
 | <span class="emoji">:heavy_minus_sign:</span> | `heavy_minus_sign` | <span class="emoji">:heavy_division_sign:</span> | `heavy_division_sign` |
 
-#### Punctuation
+#### 标点符号
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:bangbang:</span> | `bangbang` | <span class="emoji">:interrobang:</span> | `interrobang` |
 | <span class="emoji">:question:</span> | `question` | <span class="emoji">:grey_question:</span> | `grey_question` |
 | <span class="emoji">:grey_exclamation:</span> | `grey_exclamation` | <span class="emoji">:exclamation:</span> | `exclamation` <br /> `heavy_exclamation_mark` |
 | <span class="emoji">:wavy_dash:</span> | `wavy_dash` | | |
 
-#### Currency
+#### 货币
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:currency_exchange:</span> | `currency_exchange` | <span class="emoji">:heavy_dollar_sign:</span> | `heavy_dollar_sign` |
 
-#### Keycap
+#### 按键符号
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:hash:</span> | `hash` | <span class="emoji">:asterisk:</span> | `asterisk` |
 | <span class="emoji">:zero:</span> | `zero` | <span class="emoji">:one:</span> | `one` |
@@ -1098,9 +1099,9 @@ The emoji cheat sheet is a useful reference for emoji shorthand codes.
 | <span class="emoji">:eight:</span> | `eight` | <span class="emoji">:nine:</span> | `nine` |
 | <span class="emoji">:keycap_ten:</span> | `keycap_ten` | | |
 
-#### Alphabet
+#### 字母符号
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:capital_abcd:</span> | `capital_abcd` | <span class="emoji">:abcd:</span> | `abcd` |
 | <span class="emoji">:1234:</span> | `1234` | <span class="emoji">:symbols:</span> | `symbols` |
@@ -1123,9 +1124,9 @@ The emoji cheat sheet is a useful reference for emoji shorthand codes.
 | <span class="emoji">:secret:</span> | `secret` | <span class="emoji">:u55b6:</span> | `u55b6` |
 | <span class="emoji">:u6e80:</span> | `u6e80` | | |
 
-#### Geometric
+#### 几何符号
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:red_circle:</span> | `red_circle` | <span class="emoji">:large_blue_circle:</span> | `large_blue_circle` |
 | <span class="emoji">:black_circle:</span> | `black_circle` | <span class="emoji">:white_circle:</span> | `white_circle` |
@@ -1139,9 +1140,9 @@ The emoji cheat sheet is a useful reference for emoji shorthand codes.
 | <span class="emoji">:diamond_shape_with_a_dot_inside:</span> | `diamond_shape_with_a_dot_inside` | <span class="emoji">:radio_button:</span> | `radio_button` |
 | <span class="emoji">:white_square_button:</span> | `white_square_button` | <span class="emoji">:black_square_button:</span> | `black_square_button` |
 
-#### Other Symbol
+#### 其它符合
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:recycle:</span> | `recycle` | <span class="emoji">:fleur_de_lis:</span> | `fleur_de_lis` |
 | <span class="emoji">:trident:</span> | `trident` | <span class="emoji">:name_badge:</span> | `name_badge` |
@@ -1154,19 +1155,19 @@ The emoji cheat sheet is a useful reference for emoji shorthand codes.
 | <span class="emoji">:sparkle:</span> | `sparkle` | <span class="emoji">:copyright:</span> | `copyright` |
 | <span class="emoji">:registered:</span> | `registered` | <span class="emoji">:tm:</span> | `tm` |
 
-### Flags
+### 旗帜
 
-#### Common Flags
+#### 常用旗帜
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:checkered_flag:</span> | `checkered_flag` | <span class="emoji">:triangular_flag_on_post:</span> | `triangular_flag_on_post` |
 | <span class="emoji">:crossed_flags:</span> | `crossed_flags` | <span class="emoji">:black_flag:</span> | `black_flag` |
 | <span class="emoji">:white_flag:</span> | `white_flag` | <span class="emoji">:rainbow_flag:</span> | `rainbow_flag` |
 
-#### Country and Region Flags
+#### 国家和地区旗帜
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:andorra:</span> | `andorra` | <span class="emoji">:united_arab_emirates:</span> | `united_arab_emirates` |
 | <span class="emoji">:afghanistan:</span> | `afghanistan` | <span class="emoji">:antigua_barbuda:</span> | `antigua_barbuda` |
@@ -1293,9 +1294,9 @@ The emoji cheat sheet is a useful reference for emoji shorthand codes.
 | <span class="emoji">:south_africa:</span> | `south_africa` | <span class="emoji">:zambia:</span> | `zambia` |
 | <span class="emoji">:zimbabwe:</span> | `zimbabwe` | | |
 
-### GitHub Custom Emoji
+### GitHub 自定义 Emoji
 
-| icon | code | icon | code |
+| 图标 | 代码 | 图标 | 代码 |
 | :-: | - | :-: | - |
 | <span class="emoji">:atom:</span> | `atom` | <span class="emoji">:basecamp:</span> | `basecamp` |
 | <span class="emoji">:basecampy:</span> | `basecampy` | <span class="emoji">:bowtie:</span> | `bowtie` |

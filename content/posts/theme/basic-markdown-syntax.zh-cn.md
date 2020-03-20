@@ -9,8 +9,8 @@ authorLink: "https://dillonzq.com"
 description: "这篇文章展示了基本的 Markdown 语法和格式."
 license: ""
 
-tags: ["markdown"]
-categories: ["markdown"]
+tags: ["主题配置"]
+categories: ["theme"]
 hiddenFromHomePage: false
 
 featuredImage: "/images/basic-markdown-syntax/featured-image.png"

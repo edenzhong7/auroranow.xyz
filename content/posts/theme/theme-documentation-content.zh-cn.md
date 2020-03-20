@@ -9,8 +9,8 @@ authorLink: "https://dillonzq.com"
 description: "了解如何在 LoveIt 主题中快速, 直观地创建和组织内容."
 license: ""
 
-tags: ["内容", "markdown"]
-categories: ["documentation"]
+tags: ["主题配置"]
+categories: ["theme"]
 hiddenFromHomePage: false
 
 featuredImage: "/images/theme-documentation-content/featured-image.jpg"
