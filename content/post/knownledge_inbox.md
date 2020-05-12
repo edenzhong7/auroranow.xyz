@@ -172,17 +172,45 @@ z => 程序员代码面试指南
 ## k8s
 - kubernetes源码分析: kubelet、apiserver、scheduler、controller-manager、adimissionWebHook
 - k8s常见流程: kebectl exec、pod创建、statefulset滚动升级
+  // TODO
+  - https://blog.fleeto.us/post/how-kubectl-exec-works/
+  - http://www.xuyasong.com/?p=1908
+  - https://aleiwu.com/post/kubectl-debug-intro/
+  - https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/
+  - https://www.jianshu.com/p/5e0c9d1dbe95
+  - https://draveness.me/kubernetes-pod/
 - k8s 常见资源概念，service、informer的实现以及作用，约定资源版本号作用，多个版本号并存如何维护
+  // TODO
+  - https://zhuanlan.zhihu.com/p/111244353
 - k8s有什么好处，踩过什么坑
 - k8s权限控制
+  // TODO
+  - https://zhuanlan.zhihu.com/p/94361682
+  - https://juejin.im/post/5d60fe39f265da03f564ee68
 - k8s 开发经验，operator，injector
 - 怎么扩展 kubernetes scheduler, 让它能 handle 大规模的节点调度
 - helm 使用
+  // TODO
+  - https://blog.csdn.net/weixin_36938307/article/details/105226395
+  - https://helm.sh/docs/chart_template_guide/
 
 ## 监控系统
 - prom和grafana使用开发经验，监控系统怎么自监控
-- promql function实现，指标定义和用法 
+  // TODO
+  - https://www.cyningsun.com/09-13-2019/micro-service-monitor-prometheus-ha.html
+  - https://www.cyningsun.com/02-22-2020/hidden-secret-to-understanding-prometheus.html
+  - https://www.aneasystone.com/archives/2018/11/prometheus-in-action.html
+- promql function实现，指标定义和用法
+  // TODO
+  - https://prometheus.io/docs/prometheus/latest/querying/functions/
+  - https://prometheus.io/docs/concepts/metric_types/
+  - https://juejin.im/entry/5dd1e45c6fb9a0200e1a9abf
+  - https://www.qikqiak.com/post/grafana-usage-in-k8s/
 - 时序性数据库的存储结构
+  // TODO
+  - https://www.cnblogs.com/jimbo17/p/8659119.html
+  - https://www.jianshu.com/p/096e59cddb24
+
 
 ## Go语言
 ### plugin和monkey hot fix
@@ -195,6 +223,14 @@ z => 程序员代码面试指南
 - https://www.w3cschool.cn/go_internals/go_internals-65bd282x.html 
 - https://taohuawu.club/high-performance-implementation-of-goroutine-pool
 ### gc发展，三色标记法，内存分配及内存顺序保证，逃逸分析
+// TODO
+  - https://www.jianshu.com/p/bfc3c65c05d1
+  - https://www.infoq.cn/article/development-history-and-current-situation-of-gc-algorithm
+  - https://www.bookstack.cn/read/For-learning-Go-Tutorial/src-spec-02.0.md
+  - https://draveness.me/golang/docs/part3-runtime/ch07-memory/golang-memory-allocator/
+  - https://www.w3cschool.cn/go_internals/go_internals-kho3283t.html
+  - https://draveness.me/golang/docs/part3-runtime/ch07-memory/golang-stack-management/
+  - https://gfw.go101.org/article/memory-model.html
 ### 网络 非阻塞io
 // TODO 
 - https://taohuawu.club/go-netpoll-io-multiplexing-reactor
@@ -223,7 +259,7 @@ func StringToBytes(s string) (b []byte) {
 }
 ```
 
-### 反射使用场景
+### reflect
 // TODO 
 - https://draveness.me/golang/docs/part2-foundation/ch04-basic/golang-reflect/
 - https://gfw.go101.org/article/reflection.html
@@ -257,28 +293,96 @@ func StringToBytes(s string) (b []byte) {
 ## 数据库
 ### mysql
 - 存储引擎用的是什么?（InnoDB）为什么选 InnoDB?
+  // TODO
+  - https://zhuanlan.zhihu.com/p/50564425
+  - https://juejin.im/post/5da33cd2518825338b22a780
+  - https://www.sunjs.com/article/detail/366663d089e74167bd447593891096c4.html
 - 聚簇索引和非聚簇索引有什么区别
+// TODO https://juejin.im/post/5cdd701ee51d453a36384939
 - B+树和二叉树有什么区别和优劣?
+// TODO
+  - https://my.oschina.net/lienson/blog/2987474
+  - https://www.cnblogs.com/qlqwjy/p/7770580.html
 - 索引及查询优化
+  // TODO
+  - https://juejin.im/post/5cb1dec9f265da0382610968
+  - https://juejin.im/post/5c2c8dace51d455d382ee046
+  - https://tech.meituan.com/2014/06/30/mysql-index.html
 
 ### redis
 - 分布式锁
 // TODO https://chai2010.cn/advanced-go-programming-book/ch6-cloud/ch6-02-lock.html Redis深度历险
-- zset实现
+- 延时任务系统
+// TODO
+  - https://chai2010.cn/advanced-go-programming-book/ch6-cloud/ch6-03-delay-job.html
+  - https://www.chainnews.com/articles/332847148440.htm
+  - https://juejin.im/post/5caf45b96fb9a0688b573d6c
+- zset,ziplist实现
+  // TODO  Redis深度历险
+  - https://zsr.github.io/2017/07/03/redis-zset%E5%86%85%E9%83%A8%E5%AE%9E%E7%8E%B0/
+  - https://origin.redisbook.com/compress-datastruct/ziplist.html
 - 常用场景
+// TODO
+  - https://zhuanlan.zhihu.com/p/29665317
+  - https://zhuanlan.zhihu.com/p/111985190
+  - Redis深度历险
 - 高可用
+// TODO
+  - https://yq.aliyun.com/articles/626532
+  - https://www.jianshu.com/p/5de2ab291696
+  - Redis深度历险
 
 ## 微服务
 1. 服务发现，负载均衡，熔断
+// TODO
+- https://juejin.im/post/5d746acb51882579df5800f1
+- https://www.infoq.cn/article/background-architecture-and-solutions-of-service-discovery
+- https://www.jianshu.com/p/1bf9a46efe7a
+- https://juejin.im/post/5b39eea0e51d4558c1010e36
+- https://www.jianshu.com/p/8f7242cbf469
+- https://www.cnblogs.com/xybaby/p/7867735.html
+- https://juejin.im/post/5cced96e6fb9a032514bbf94
+- https://zhuanlan.zhihu.com/p/61363959
 2. 全局id生成器
-3. 高可用
-4. raft/paxos共识算法
-5. 对Service Mesh和Serverless的理解
+// TODO
+- http://www.52im.net/thread-1998-1-1.html
+- https://chai2010.cn/advanced-go-programming-book/ch6-cloud/ch6-01-dist-id.html
+3. raft/paxos共识算法
+// TODO
+- https://juejin.im/post/5ce7be0fe51d45775c73dc57
+- https://www.infoq.cn/article/raft-paper
+- http://blog.itpub.net/31556438/viewspace-2637112/
+- https://owent.net/2016/1226.html
+- https://zhuanlan.zhihu.com/p/31780743
+- https://www.cnblogs.com/linbingdong/p/6253479.html
+- https://juejin.im/post/5b2664bd51882574874d8a76
+- https://ocavue.com/paxos.html
+4. 对Service Mesh和Serverless的理解
+// TODO
+- https://www.infoq.cn/article/xVEoHtcORtxRSpCf2Ldd
+- https://www.servicemesher.com/blog/why-is-service-mesh/
+- https://zhuanlan.zhihu.com/p/61901608
+- https://jimmysong.io/blog/what-is-a-service-mesh/
+- https://jimmysong.io/kubernetes-handbook/usecases/understanding-serverless.html
+- https://skyao.io/learning-serverless/introduction/scene.html
+
 
 ## Istio
+读书笔记
 ### 设计理念及架构
+// TODO 
+- https://istio.io/zh/docs/ops/deployment/architecture/
+- https://www.kubernetes.org.cn/7374.html
 ### 功能和优缺点分析
+// TODO
+- https://www.sofastack.tech/blog/service-mesh-development-trend-2/
+- https://zhuanlan.zhihu.com/p/54123996
 ### 使用经验
+// TODO
+- https://juejin.im/post/5b7fc952f265da4358368734
+- https://zhuanlan.zhihu.com/p/90720475
+- https://www.servicemesher.com/blog/redefining-extensibility-in-proxies/
+- https://www.servicemesher.com/blog/istio-1-5-explanation/
 
 ## 其他问题
 - 堆和栈在内存中的区别是什么(数据结构方面以及实际实现方面）
@@ -291,3 +395,36 @@ func StringToBytes(s string) (b []byte) {
 - 百度POI中如何试下查找最近的商家功能(坐标镜像+R树)。
 - 遍历二叉树
 - 快速排序和冒泡的排序，怎么转换一下
+  
+## 项目
+### xmesh
+参考Envoy和阿里Mosn的设计，实现简单的网络代理，配合iptables对pod所有进出站tcp/udp流量进行代理
+1. 数据库代理
+  // TODO
+  - https://docs.mongodb.com/manual/reference/mongodb-wire-protocol/#wire-msg-sections
+  - https://dev.mysql.com/doc/dev/mysql-server/8.0.11/page_protocol_basic_packets.html#sect_protocol_basic_packets_packet
+  - https://redis.io/topics/protocol
+2. tcp/udp透明代理
+3. iptables
+4. filter设计，http2/quic/自定义协议检测，在代理层实现Metric和Trace上报，以及认证、限流等操作；
+
+### 工作经验
+微服务框架开发，参考gRPC 拦截器形式实现metrics统计和trace上报，Grafana / Prometheus / Helm / k8s的学习和使用: 
+1. 基于grafana的auth proxy鉴权方式以及grafana代码中sqlmodel实现无侵入权限代理，将内部系统游戏项目映射到grafana org；
+2. 使用Prometheus client sdk实现统一收集metrics上报，以及通过解析yaml定义规则将json统计日日志转换成prom metrics，支持物理机以Endpoint方式注册到k8s中，通过ServiceMonitor做监控目标的自动发现，使用k8s api实现Registry，通过操作ServiceMonitor/Service/Endpoint资源来实现自动发现物理机exporter，使用Thanos方案实现Prom高可用和数据持久化；
+3. 实现sidecar injector用于自动注入框架依赖容器和其他配置，用户编写业务的helm chart无需额外编写框架配置，支持多模板选择，pod全部属性的patch；
+4. 自定义k8s controller对k8s资源事件进行监听并通过定义规则进行上报
+5. k8s调试器
+
+### xrpc
+- 修改proto-gen-go增加plugin generator兼容pb生成stub代码，基于go/ast实现从定义interface的go文件中生成stub代码，基于反射直接注册函数/结构体，与其他rpc不同的是，本框架不规定函数入参和返回值的个数和类型，有像本地函数般的体验；
+- 支持基于tcp/kcp的自定义协议，也支持http2(抄gRPC)和quic；
+- 参考rpcx项目的插件系统设计，各阶段设计单独的插件接口，提供基于consul的服务注册/发现、prometheus的监控上报以及Jaeger的链路追踪插件；
+- 使用chord算法实现分布式kv提供服务发现
+
+### 组件开发
+- memory cache组件(参考BigCache实现)，go 1.5后针对map做了优化，对于key和value都不是指针的map不会进行GC扫描，设计成map[int]int, key是存储key的hash，value是在分片中的[]byte数组下标，并不直接对实际value进行存储而是追加序列化的[]byte到分片的全局[]byte中，依赖先进先出自动过期删除，删除接口只删除map中的下标记录，并不清理全局[]byte，回收代价太大；
+- 海量消息ID生成，每条消息一个自增且唯一的消息ID分拆成两个关键属性——消息ID、消息序列号，前者需要唯一性不需要顺序性，使用UUID即可，后者需要顺序性不需要唯一性，每个用户保存一个单独的计数；
+- yaml配置解析器，多叉树递归解析，实现直接以yaml路径(包含正则匹配)的形式获取yaml节点并提供接口转换成各种Go基本数据类型；
+- 基于go/ast实现go文件所有interface的信息提取，可生成rpc stub代码，以及web框架路由注册，不需要反射； 
+- 共享内存控制进程库，运行进程定时查询共享内存获取状态来触发重启停止重载配置等操作；
