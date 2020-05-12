@@ -28,30 +28,122 @@ comment: true
 <!--more-->
 ## 基础
 ### 网络
-1.  TCP/IP 协议，HTTP协议
-    - 三次握手，四次挥手，TIME_WAIT 的作用，
-    - 拥塞控制，窗口滑动，
-    - TCP和UDP差别，应用场景，常见上层协议
-    -  HTTP 协议的返回码、HTTP 的方法，报文解析，
-    -  tls加密，
-    -  HTTP三大版本的改进对比
-2. socket
-   - 阻塞io
-   - 非阻塞io
-   - io多路复用: select/poll/epoll 优缺点及使用场景
-   - 如何设置socket参数实现透明代理
-   - graceful重启web服务器
-   - 常用socket opt
+### 网络/协议 
+#### TCP/IP 协议
+引用: 
+- https://www.cnblogs.com/lipengfei159263/p/9745986.html
+- https://blog.csdn.net/Wu000999/article/details/89293717
+
+1. 三次握手
+最开始的时候客户端和服务器都是处于CLOSED状态。主动打开连接的为客户端，被动打开连接的是服务器。
+- TCP服务器进程先创建传输控制块TCB，时刻准备接受客户进程的连接请求，此时服务器就进入了LISTEN（监听）状态；
+- TCP客户进程也是先创建传输控制块TCB，然后向服务器发出连接请求报文，这是报文首部中的同部位SYN=1，同时选择一个初始序列号 seq=x ，此时，TCP客户端进程进入了 SYN-SENT（同步已发送状态）状态。TCP规定，SYN报文段（SYN=1的报文段）不能携带数据，但需要消耗掉一个序号。
+- TCP服务器收到请求报文后，如果同意连接，则发出确认报文。确认报文中应该 ACK=1，SYN=1，确认号是ack=x+1，同时也要为自己初始化一个序列号 seq=y，此时，TCP服务器进程进入了SYN-RCVD（同步收到）状态。这个报文也不能携带数据，但是同样要消耗一个序号。
+- TCP客户进程收到确认后，还要向服务器给出确认。确认报文的ACK=1，ack=y+1，自己的序列号seq=x+1，此时，TCP连接建立，客户端进入ESTABLISHED（已建立连接）状态。TCP规定，ACK报文段可以携带数据，但是- 如果不携带数据则不消耗序号。
+- 当服务器收到客户端的确认后也进入ESTABLISHED状态，此后双方就可以开始通信了。
+
+最后一次客户端的确认主要防止已经失效的连接请求报文突然又传送到了服务器，从而产生错误。
+
+在三次握手过程中，Server发送SYN-ACK之后，收到Client的ACK之前的TCP连接称为半连接（half-open connect），此时Server处于SYN_RCVD状态，当收到ACK后，Server转入ESTABLISHED状态。SYN攻击就是Client在短时间内伪造大量不存在的IP地址，并向Server不断地发送SYN包，Server回复确认包，并等待Client的确认，由于源地址是不存在的，因此，Server需要不断重发直至超时，这些伪造的SYN包将产时间占用未连接队列，导致正常的SYN请求因为队列满而被丢弃，从而引起网络堵塞甚至系统瘫痪。SYN攻击时一种典型的DDOS攻击，检测SYN攻击的方式非常简单，即当Server上有大量半连接状态且源IP地址是随机的，则可以断定遭到SYN攻击了，使用如下命令可以让之现行：`#netstat -nap | grep SYN_RECV`
+
+2. 四次挥手
+数据传输完毕后，双方都可释放连接。最开始的时候，客户端和服务器都是处于ESTABLISHED状态，然后客户端主动关闭，服务器被动关闭。
+
+- 客户端进程发出连接释放报文，并且停止发送数据。释放数据报文首部，FIN=1，其序列号为seq=u（等于前面已经传送过来的数据的最后一个字节的序号加1），此时，客户端进入FIN-WAIT-1（终止等待1）状态。 TCP规定，FIN报文段即使不携带数据，也要消耗一个序号。
+- 服务器收到连接释放报文，发出确认报文，ACK=1，ack=u+1，并且带上自己的序列号seq=v，此时，服务端就进入了CLOSE-WAIT（关闭等待）状态。TCP服务器通知高层的应用进程，客户端向服务器的方向就释放了，这时候处于半关闭状态，即客户端已经没有数据要发送了，但是服务器若发送数据，客户端依然要接受。这个状态还要持续一段时间，也就是整个CLOSE-WAIT状态持续的时间。
+- 客户端收到服务器的确认请求后，此时，客户端就进入FIN-WAIT-2（终止等待2）状态，等待服务器发送连接释放报文（在这之前还需要接受服务器发送的最后的数据）。
+- 服务器将最后的数据发送完毕后，就向客户端发送连接释放报文，FIN=1，ack=u+1，由于在半关闭状态，服务器很可能又发送了一些数据，假定此时的序列号为seq=w，此时，服务器就进入了LAST-ACK（最后确认）状态，等待客户端的确认。
+- 客户端收到服务器的连接释放报文后，必须发出确认，ACK=1，ack=w+1，而自己的序列号是seq=u+1，此时，客户端就进入了TIME-WAIT（时间等待）状态。注意此时TCP连接还没有释放，必须经过2∗∗MSL（最长报文段寿命）的时间后，当客户端撤销相应的TCB后，才进入CLOSED状态。 
+- 服务器只要收到了客户端发出的确认，立即进入CLOSED状态。同样，撤销TCB后，就结束了这次的TCP连接。可以看到，服务器结束TCP连接的时间要比客户端早一些。
+
+3. 为什么客户端最后还要等待2MSL？
+MSL（Maximum Segment Lifetime），TCP允许不同的实现可以设置不同的MSL值。
+
+第一，保证客户端发送的最后一个ACK报文能够到达服务器，因为这个ACK报文可能丢失，站在服务器的角度看来，我已经发送了FIN+ACK报文请求断开了，客户端还没有给我回应，应该是我发送的请求断开报文它没有收到，于是服务器又会重新发送一次，而客户端就能在这个2MSL时间段内收到这个重传的报文，接着给出回应报文，并且会重启2MSL计时器。
+
+第二，防止类似与“三次握手”中提到了的“已经失效的连接请求报文段”出现在本连接中。客户端发送完最后一个确认报文后，在这个2MSL时间中，就可以使本连接持续的时间内所产生的所有报文段都从网络中消失。这样新的连接中不会出现旧连接的请求报文。
+
+为什么建立连接是三次握手，关闭连接确是四次挥手呢？
+
+建立连接的时候， 服务器在LISTEN状态下，收到建立连接请求的SYN报文后，把ACK和SYN放在一个报文里发送给客户端。
+而关闭连接时，服务器收到对方的FIN报文时，仅仅表示对方不再发送数据了但是还能接收数据，而自己也未必全部数据都发送给对方了，所以己方可以立即关闭，也可以发送一些数据给对方后，再发送FIN报文给对方来表示同意现在关闭连接，因此，己方ACK和FIN一般都会分开发送，从而导致多了一次。
+
+4. TIME_WAIT 的作用
+   主动关闭的Socket端ack对方的FIN请求后会进入TIME_WAIT状态，并且持续2MSL时间长度，默认30s, 确保最后一个确认报文能够到达。如果没能到达，服务端就会会重发FIN请求释放连接。等待一段时间没有收到重发就说明服务的已经CLOSE了。如果有重发，则客户端再发送一次LAST ack信号，等待一段时间是为了让本连接持续时间内所产生的所有报文都从网络中消失，使得下一个新的连接不会出现旧的连接请求报文。
+5. 拥塞控制，窗口滑动
+   窗口滑动
+   窗口是缓存的一部分，用来暂时存放字节流。发送方和接收方各有一个窗口，接收方通过 TCP 报文段中的窗口字段 告诉发送方自己的窗口大小，发送方根据这个值和其它信息设置自己的窗口大小。发送窗口内的字节都允许被发送，接收窗口内的字节都允许被接收。如果发送窗口左部的字节已经发送并且收到了确 认，那么就将发送窗口向右滑动一定距离，直到左部第一个字节不是已发送并且已确认的状态;接收窗口的滑动类 似，接收窗口左部字节已经发送确认并交付主机，就向右滑动接收窗口。接收窗口只会对窗口内最后一个按序到达的字节进行确认，例如接收窗口已经收到的字节为 {31, 34, 35}，其中 {31} 按序到达，而 {34, 35} 就不是，因此只对字节 31 进行确认。发送方得到一个字节的确认之后，就知道这个字节之前 的所有字节都已经被接收。接收方发送的确认报文中的窗口字段可以用来控制发送方窗口大小，从而影响发送方的发送速率。将窗口字段设置为 0，则发送方不能发送数据。
+   
+   拥塞控制
+   如果网络出现拥塞，分组将会丢失，此时发送方会继续重传，从而导致网络拥塞程度更高。因此当出现拥塞时，应当 控制发送方的速率。这一点和流量控制很像，但是出发点不同。流量控制是为了让接收方能来得及接收，而拥塞控制 是为了降低整个网络的拥塞程度。
+
+   发送的最初执行慢开始，令 cwnd = 1，发送方只能发送 1 个报文段;当收到确认后，将 cwnd 加倍，因此之后发送方能够发送的报文段数量为:2、4、8 ...。注意到慢开始每个轮次都将 cwnd 加倍，这样会让 cwnd 增长速度非常快，从而使得发送方发送的速度增长速度过 快，网络拥塞的可能性也就更高。设置一个慢开始门限 ssthresh，当 cwnd >= ssthresh 时，进入拥塞避免，每个轮 次只将 cwnd 加 1。如果出现了超时，则令 ssthresh = cwnd / 2，然后重新执行慢开始。
+    
+   在发送方，如果收到三个重复确认，那么可以知道下一个报文段丢失，此时执行快重传，立即重传下一个报文段。例如收到三个 M2，则 M3 丢失，立即重传 M3。 在这种情况下，只是丢失个别报文段，而不是网络拥塞。因此执行快恢复，令 ssthresh = cwnd / 2 ，cwnd =ssthresh，注意到此时直接进入拥塞避免。
+   
+   慢开始和快恢复的快慢指的是 cwnd 的设定值，而不是 cwnd 的增长速率。慢开始 cwnd 设定为 1，而快恢复 cwnd
+设定为 ssthresh。
+
+6. TCP和UDP差别，应用场景，常见上层协议
+用户数据报协议 UDP(User Datagram Protocol)是无连接的，尽最大可能交付，没有拥塞控制，面向报文 (对于应用程序传下来的报文不合并也不拆分，只是添加 UDP 首部)，支持一对一、一对多、多对一和多对多 的交互通信。8字节
+传输控制协议 TCP(Transmission Control Protocol)是面向连接的，提供可靠交付，有流量控制，拥塞控 制，提供全双工通信，面向字节流(把应用层传下来的报文看成字节流，把字节流组织成大小不等的数据 块)，每一条 TCP 连接只能是点对点的(一对一)。20字节
+
+// TODO 应用场景
+
+常见上层协议
+基于TCP
+
+| 协议|	全称	|默认端口|
+|----|----|---|
+| HTTP	 | HyperText Transfer Protocol（超文本传输协议）	|80|
+| FTP	 | File Transfer Protocol (文件传输协议) |	20用于传输数据，21用于传输控制信息|
+| SMTP	 | Simple Mail Transfer Protocol (简单邮件传输协议)	|25|
+| SSH	 | Secure Shell	|22|
+| TELNET | 	Teletype over the Network (网络电传)	|23|
+
+基于UDP
+
+| 协议 |	全称	|端口|
+|---|---|---|
+| DNS | Domain Name Service (域名服务) |	53|
+| TFT | Trivial File Transfer Protocol (简单文件传输协议)|	69|
+| SNM | Simple Network Management Protocol (简单网络管理协议)	|通过UDP端口161接收，只有Trap信息采用UDP端口162。|
+| NTP | Network Time Protocol (网络时间协议)	|123|
+
+
+### HTTP协议
+1. HTTP 协议的返回码、HTTP 的方法，报文解析，
+// TODO CS-Notes
+2. tls加密
+// TODO http://www.ruanyifeng.com/blog/2014/02/ssl_tls.html http://www.ruanyifeng.com/blog/2014/02/ssl_tls.html
+3.  HTTP三大版本的改进对比
+// TODO https://blog.fundebug.com/2019/03/07/understand-http2-and-http3/ https://juejin.im/post/5dc37277f265da4d57771f87
+### socket
+1. 阻塞io
+2. 非阻塞io
+3. io多路复用: select/poll/epoll 优缺点及使用场景
+// TODO 以上CS-Notes
+4. 如何设置socket参数实现透明代理
+// TODO https://www.codenong.com/js5393fb5e2c87/ xmesh
+5. graceful重启web服务器
+// TODO https://gravitational.com/blog/golang-ssh-bastion-graceful-restarts/
+6. 常用socket opt
+// TODO https://notes.shichao.io/unp/ch7/
 
 ### 数据结构
 - 数据库相关数据结构
-- hashmap, slice, routine
-- 堆，AVL树，B树，B+树，二叉查找树，字典树，跳跃表，图，前缀树后缀树
+// TODO mysql https://juejin.im/post/5cb7247df265da03af27ccf9
+// TODO redis https://juejin.im/post/5d71d3bee51d453b5f1a04f1 Redis深度历险
+- hashmap, slice, string...
+// TODO https://draveness.me/golang/docs/part2-foundation/ch03-datastructure/golang-array/ https://gfw.go101.org/article/container.html
+- 堆，AVL树，二叉查找树，字典树，图，前缀树后缀树
+// TODO https://blog.fundebug.com/2018/08/27/code-interview-data-structure/
 
 ### 操作系统
 - 进程管理，进程线程协程，进程间通讯
 - 死锁产生、破坏、预防
 - 内存管理，着重虚拟内存
+// TODO CS-Notes
 
 ### 算法
 x => leetcode
@@ -78,7 +170,6 @@ z => 程序员代码面试指南
 ### 数学、几何、概率
 
 ## k8s
-
 - kubernetes源码分析: kubelet、apiserver、scheduler、controller-manager、adimissionWebHook
 - k8s常见流程: kebectl exec、pod创建、statefulset滚动升级
 - k8s 常见资源概念，service、informer的实现以及作用，约定资源版本号作用，多个版本号并存如何维护
@@ -89,19 +180,35 @@ z => 程序员代码面试指南
 - helm 使用
 
 ## 监控系统
-
 - prom和grafana使用开发经验，监控系统怎么自监控
 - promql function实现，指标定义和用法 
 - 时序性数据库的存储结构
 
 ## Go语言
 ### plugin和monkey hot fix
+// TODO 
+- https://draveness.me/golang/docs/part4-advanced/ch08-metaprogramming/golang-plugin/  
+- https://bou.ke/blog/monkey-patching-in-go/
 ### 协程实现及调度
+// TODO
+- https://draveness.me/golang/docs/part3-runtime/ch06-concurrency/golang-goroutine/
+- https://www.w3cschool.cn/go_internals/go_internals-65bd282x.html 
+- https://taohuawu.club/high-performance-implementation-of-goroutine-pool
 ### gc发展，三色标记法，内存分配及内存顺序保证，逃逸分析
 ### 网络 非阻塞io
-### chan, sync, go并发实践，常见并发错误
-### 基本数据结构实现: map, slice, array, nil，interface
+// TODO 
+- https://taohuawu.club/go-netpoll-io-multiplexing-reactor
+- https://www.w3cschool.cn/go_internals/go_internals-wlhn283l.html
+### chan, sync, context, go并发实践，常见并发错误
+// TODO 
+- Go101
+- https://draveness.me/golang/docs/part3-runtime/ch06-concurrency/golang-context/
+- https://www.w3cschool.cn/go_internals/go_internals-dea92830.html
 ### cgo，unsafe
+// TODO
+- https://www.w3cschool.cn/go_internals/go_internals-419t283o.html
+- https://gfw.go101.org/article/unsafe.html
+- https://chai2010.cn/advanced-go-programming-book/ch2-cgo/readme.html
 #### unsafe
 - string <-> []byte
 ```
@@ -117,8 +224,35 @@ func StringToBytes(s string) (b []byte) {
 ```
 
 ### 反射使用场景
+// TODO 
+- https://draveness.me/golang/docs/part2-foundation/ch04-basic/golang-reflect/
+- https://gfw.go101.org/article/reflection.html
+
 ### 编码规范，TDD
+// TODO
+- https://github.com/xxjwxc/uber_go_guide_cn
+- tencent编码规范
+
 ### go工具链使用
+- pprof
+// TODO
+  - https://segmentfault.com/a/1190000016412013
+  - https://blog.golang.org/pprof
+- trace
+  // TODO
+  - https://medium.com/a-journey-with-go/go-discovery-of-the-trace-package-e5a821743c3c
+  - https://making.pusher.com/go-tool-trace/
+- test
+// TODO
+  - https://books.studygolang.com/The-Golang-Standard-Library-by-Example/chapter09/09.1.html
+  - http://frobisher.me/2017/06/26/golang-about-tests-toolchains/
+  - https://www.flysnow.org/2017/05/16/go-in-action-go-unit-test.html
+- build参数、tag
+// TODO https://golang.org/cmd/go/
+- dlv调试
+// TODO
+  - https://hustcat.github.io/getting-started-with-delve/
+  - https://wiki.crdb.io/wiki/spaces/CRDB/pages/82411849/Debugging+with+Delve
 
 ## 数据库
 ### mysql
@@ -129,6 +263,7 @@ func StringToBytes(s string) (b []byte) {
 
 ### redis
 - 分布式锁
+// TODO https://chai2010.cn/advanced-go-programming-book/ch6-cloud/ch6-02-lock.html Redis深度历险
 - zset实现
 - 常用场景
 - 高可用
