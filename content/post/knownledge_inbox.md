@@ -88,6 +88,8 @@ MSL（Maximum Segment Lifetime），TCP允许不同的实现可以设置不同�
 用户数据报协议 UDP(User Datagram Protocol)是无连接的，尽最大可能交付，没有拥塞控制，面向报文 (对于应用程序传下来的报文不合并也不拆分，只是添加 UDP 首部)，支持一对一、一对多、多对一和多对多 的交互通信。8字节
 传输控制协议 TCP(Transmission Control Protocol)是面向连接的，提供可靠交付，有流量控制，拥塞控 制，提供全双工通信，面向字节流(把应用层传下来的报文看成字节流，把字节流组织成大小不等的数据 块)，每一条 TCP 连接只能是点对点的(一对一)。20字节
 
+// TODO 高级TCP/UDP编程，常用socket options
+
 // TODO 应用场景
 
 常见上层协议
@@ -171,6 +173,14 @@ z => 程序员代码面试指南
 
 ## k8s
 - kubernetes源码分析: kubelet、apiserver、scheduler、controller-manager、adimissionWebHook
+  // TODO
+  - https://www.huweihuang.com/article/source-analysis/kubelet/create-pod-by-kubelet/
+  - https://www.huweihuang.com/article/kubernetes/core-principle/kubernetes-core-principle-api-server/
+  - https://www.huweihuang.com/article/source-analysis/client-go-source-analysis/
+  - https://www.huweihuang.com/article/source-analysis/kube-controller-manager/NewControllerManagerCommand/
+  - https://www.huweihuang.com/article/source-analysis/kube-scheduler/NewSchedulerCommand/
+  - https://docs.giantswarm.io/guides/creating-your-own-admission-controller/
+  - https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/
 - k8s常见流程: kebectl exec、pod创建、statefulset滚动升级
   // TODO
   - https://blog.fleeto.us/post/how-kubectl-exec-works/
@@ -183,12 +193,29 @@ z => 程序员代码面试指南
   // TODO
   - https://zhuanlan.zhihu.com/p/111244353
 - k8s有什么好处，踩过什么坑
+  // TODO
+  - https://zhuanlan.zhihu.com/p/106123111
+  - https://medium.com/sfl-newsroom/containerization-advantages-of-kubernetes-1eab18b3115b
+  - https://devspace.cloud/blog/2019/10/31/advantages-and-disadvantages-of-kubernetes
+  - https://www.softobiz.com/7-kubernetes-traps-to-avoid-at-any-cost/
+  - https://www.infoq.cn/article/u6D2XoVVVz1fpxxzBKzT
 - k8s权限控制
   // TODO
   - https://zhuanlan.zhihu.com/p/94361682
   - https://juejin.im/post/5d60fe39f265da03f564ee68
 - k8s 开发经验，operator，injector
+  // TODO
+  - https://www.openshift.com/blog/kubernetes-operators-best-practices
+  - https://developer.ibm.com/technologies/containers/tutorials/kubernetes-operators-framework/
+  - https://sdk.operatorframework.io/docs/golang/
+  - injector, kubewatch, registry
+  - CSI, CNI
 - 怎么扩展 kubernetes scheduler, 让它能 handle 大规模的节点调度
+  // TODO
+  - https://kubernetes.io/docs/setup/best-practices/cluster-large/
+  - https://kubernetes.io/blog/2017/03/advanced-scheduling-in-kubernetes/
+  - https://github.com/AliyunContainerService/gpushare-scheduler-extender
+  - https://zhuanlan.zhihu.com/p/111244925
 - helm 使用
   // TODO
   - https://blog.csdn.net/weixin_36938307/article/details/105226395
@@ -200,6 +227,7 @@ z => 程序员代码面试指南
   - https://www.cyningsun.com/09-13-2019/micro-service-monitor-prometheus-ha.html
   - https://www.cyningsun.com/02-22-2020/hidden-secret-to-understanding-prometheus.html
   - https://www.aneasystone.com/archives/2018/11/prometheus-in-action.html
+  - ServiceMonitor
 - promql function实现，指标定义和用法
   // TODO
   - https://prometheus.io/docs/prometheus/latest/querying/functions/
