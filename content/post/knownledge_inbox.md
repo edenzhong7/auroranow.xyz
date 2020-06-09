@@ -117,7 +117,7 @@ MSL（Maximum Segment Lifetime），TCP允许不同的实现可以设置不同�
 1. HTTP 协议的返回码、HTTP 的方法，报文解析，
 // TODO CS-Notes
 2. tls加密
-// TODO http://www.ruanyifeng.com/blog/2014/02/ssl_tls.html http://www.ruanyifeng.com/blog/2014/02/ssl_tls.html
+// TODO http://www.ruanyifeng.com/blog/2014/02/ssl_tls.html
 3.  HTTP三大版本的改进对比
 // TODO https://blog.fundebug.com/2019/03/07/understand-http2-and-http3/ https://juejin.im/post/5dc37277f265da4d57771f87
 ### socket
@@ -126,7 +126,7 @@ MSL（Maximum Segment Lifetime），TCP允许不同的实现可以设置不同�
 3. io多路复用: select/poll/epoll 优缺点及使用场景
 // TODO 以上CS-Notes
 4. 如何设置socket参数实现透明代理
-// TODO https://www.codenong.com/js5393fb5e2c87/ xmesh
+// TODO https://www.codenong.com/js5393fb5e2c87/ https://www.jianshu.com/p/76cea3ef249d xmesh
 5. graceful重启web服务器
 // TODO https://gravitational.com/blog/golang-ssh-bastion-graceful-restarts/
 6. 常用socket opt
